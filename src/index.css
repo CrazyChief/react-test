@@ -1,13 +1,117 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+    font-family: Impact;
+    src: url(assets/fonts/impact/impact.ttf);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+    font: 14px Impact;
+    margin: 0;
+    padding: 0;
+    color: #000;
+}
+
+main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 90px;
+    width: 100%;
+    padding: 10px;
+    background-color: yellow;
+}
+
+.header ul {
+    position: relative;
+    margin: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.header > a {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+}
+
+
+section.content {
+    position: relative;
+    top: 110px;
+    width: 100%;
+    height: calc(100vh - 110px);
+    display: block;
+    background-color: black;
+}
+
+.counter-wrapper {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    font-size: 50px;
+}
+
+.cell-wrapper {
+    display: flex;
+    perspective: 45em;
+    position: relative;
+    transform-style: preserve-3d;
+    transition-duration: .3s;
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+}
+
+.cell-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    border: 1px dashed white;
+    text-align: center;
+    color: white;
+    /*visibility: hidden;*/
+}
+
+.cell-item:nth-child(1) {
+    transform: rotateX(0deg) translateZ(0.55em);
+}
+
+.cell-item:nth-child(2) {
+    transform: rotateX(90deg) translateZ(0.55em);
+}
+
+.cell-item:nth-child(3) {
+    transform: rotateX(180deg) translateZ(0.55em);
+}
+
+.cell-item:nth-child(4) {
+    transform: rotateX(-90deg) translateZ(0.55em);
+}
+
+.counter-section-wrapper {
+    width: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.counter-section-wrapper p {
+    color: white;
+    margin: 0 0 0 15px;
 }
